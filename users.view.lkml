@@ -41,7 +41,8 @@ view: users {
   }
 
   measure: created_to_activated {
-    sql: TIMESTAMPDIFF(day, ${TABLE}.activated, ${TABLE}.created);;
+    type: average
+    sql: DATETIME_DIFF(DATETIME(${TABLE}.activated_at), DATETIME(${TABLE}.created_at), DAY);;
   }
 
   dimension: language {
