@@ -54,4 +54,24 @@ view: users {
     type: count
     drill_fields: [user_id, emails.count, events.count]
   }
+
+  dimension: language_group {
+    case: {
+      when: {
+        sql: ${language} = "english" ;;
+        label: "english"
+      }
+      when: {
+        sql: ${language} = "indian" ;;
+        label: "indian"
+      }
+      when: {
+        sql: ${language} = "chinese" ;;
+        label: "chinese"
+      }
+
+      else: "other"
+    }
+    alpha_sort: yes
+  }
 }
