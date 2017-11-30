@@ -40,6 +40,10 @@ view: users {
     sql: ${TABLE}.created_at ;;
   }
 
+  measure: created_to_activated {
+    sql: TIMESTAMPDIFF(day, ${TABLE}.activated, ${TABLE}.created);;
+  }
+
   dimension: language {
     type: string
     sql: ${TABLE}.language ;;
