@@ -10,7 +10,8 @@ view: emails {
     type: number
     sql: CASE When ${action} = "sent_weekly_digest" THEN 1
     When ${action} = "sent_reengagement_email" THEN 1
-    Else 0;;
+    Else 0
+    END;;
 
   }
 
