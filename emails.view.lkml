@@ -77,8 +77,23 @@ view: emails {
     }
   }
 
+  measure: total_emails_sent {
+    type: number
+    sql:  ${count_weekly_digest}+${count_reengagement} ;;
+  }
+
   measure: open_pc {
-    type: percent_of_total
-    sql: ${TABLE}.open ;;
+    type: number
+    sql: ${count_opens}/${total_emails_sent} ;;
+  }
+
+  measure: clickthrough_pc_of_open {
+    type: number
+    sql: ${count_clickthroughs}/${count_opens} ;;
+  }
+
+  measure: clickthrough_pc_of_sent {
+    type:  number
+    sql: ${count_clickthroughs}/${total_emails_sent} ;;
   }
 }
