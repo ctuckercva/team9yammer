@@ -6,6 +6,14 @@ view: emails {
     sql: ${TABLE}.action ;;
   }
 
+  dimension: sent_email {
+    type: number
+    sql: CASE When ${action} = "sent_weekly_digest" THEN 1
+    When ${action} = "sent_reengagement_email" THEN 1
+    Else 0;;
+
+  }
+
   dimension_group: occurred {
     type: time
     timeframes: [
@@ -34,5 +42,10 @@ view: emails {
   measure: count {
     type: count
     drill_fields: [users.user_id]
+  }
+
+  measure: open_pc {
+    type: percent_of_total
+    sql: ${TABLE}.open ;;
   }
 }
