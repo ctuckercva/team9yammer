@@ -45,6 +45,14 @@ view: emails {
     drill_fields: [users.user_id]
   }
 
+  measure: count_weekly_digest {
+    type: count
+    filters: {
+      field: action
+      value: "sent_weekly_digest"
+    }
+  }
+
   measure: open_pc {
     type: percent_of_total
     sql: ${TABLE}.open ;;
