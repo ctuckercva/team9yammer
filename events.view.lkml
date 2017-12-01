@@ -68,4 +68,46 @@ view: events {
     }
   }
 
+  measure: send_message_events {
+    type: count
+    filters: {
+      field: event_name
+      value: "send_message"
+    }
+  }
+
+  measure: search_autocomplete_events {
+    type: count
+    filters: {
+      field: event_name
+      value: "search_autocomplete"
+    }
+  }
+
+  measure: view_inbox_events {
+    type: count
+    filters: {
+      field: event_name
+      value: "view_inbox"
+    }
+  }
+
+  measure: like_message_events {
+    type: count
+    filters: {
+      field: event_name
+      value: "like_message"
+    }
+  }
+
+  measure: search_run_events {
+    type: count
+    filters: {
+      field: event_name
+      value: "search_run"
+    }
+  }
+
+
+
 }
