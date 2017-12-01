@@ -4,7 +4,7 @@ view: users {
   dimension: user_id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.user_id ;;
+    sql: CAST(${TABLE}.user_id AS INT64) ;;
   }
 
   dimension_group: activated {

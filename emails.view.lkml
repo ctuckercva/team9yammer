@@ -23,7 +23,7 @@ view: emails {
   dimension: user_id {
     type: number
     # hidden: yes
-    sql: ${TABLE}.user_id ;;
+    sql: CAST(${TABLE}.user_id AS INT64) ;;
   }
 
   dimension: user_type {
