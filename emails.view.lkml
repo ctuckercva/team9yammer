@@ -53,6 +53,30 @@ view: emails {
     }
   }
 
+  measure: count_reengagement {
+    type: count
+    filters: {
+      field: action
+      value: "sent_reengagement_email"
+    }
+  }
+
+  measure: count_opens {
+    type: count
+    filters: {
+      field: action
+      value: "email_open"
+    }
+  }
+
+  measure: count_clickthroughs {
+    type: count
+    filters: {
+      field: action
+      value: "email_clickthrough"
+    }
+  }
+
   measure: open_pc {
     type: percent_of_total
     sql: ${TABLE}.open ;;
