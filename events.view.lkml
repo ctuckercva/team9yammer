@@ -51,4 +51,21 @@ view: events {
     type: count
     drill_fields: [event_name, users.user_id]
   }
+
+  measure: login_events {
+    type: count
+    filters: {
+      field: event_name
+      value: "login"
+    }
+  }
+
+  measure: click_any_results_events {
+    type: count
+    filters: {
+      field: event_name
+      value: "search_click_result_1, search_click_result_2, search_click_result_3, search_click_result_4, search_click_result_5, search_click_result_6, search_click_result_7, search_click_result_8, search_click_result_9, search_click_result_10"
+    }
+  }
+
 }
