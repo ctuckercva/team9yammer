@@ -85,7 +85,7 @@ view: emails {
 
   measure: open_pc {
     type: number
-    sql: safe_divide(${count_opens},(${total_emails_sent}) ;;
+    sql: safe_divide(${count_opens},${total_emails_sent}) ;;
   }
 
   measure: clickthrough_pc_of_open {
