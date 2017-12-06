@@ -108,6 +108,9 @@ view: events {
     }
   }
 
-
+  measure: maxdate {
+    type: max
+    sql: ${occurred_date} ;;
+  }
 
 }
