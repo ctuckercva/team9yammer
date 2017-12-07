@@ -31,8 +31,8 @@ view: events_count_by_device {
     sql: ${TABLE}.wk_date ;;
   }
 
-  dimension: events_count {
-    type: string
+  measure: events_count {
+    type: number
     sql: ${TABLE}.events_count ;;
   }
 
