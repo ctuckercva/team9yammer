@@ -24,4 +24,4 @@ explore: events {
 
 explore: users {}
 
-explore: events_count_by_device {}
+#explore: events_count_by_device {}
