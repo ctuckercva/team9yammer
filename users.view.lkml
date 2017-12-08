@@ -62,9 +62,9 @@ view: users {
     type: count
     drill_fields: [user_id, emails.count, events.count]
   }
-  measure: countactivated {
-    type: count
-    drill_fields: [activated_date]
+  measure: Activated_count{
+    type: sum
+    sql: CASE WHEN NOT (${TABLE}.activated_at IS NOT NULL) THEN 1 ELSE 0 END;;
   }
 
   dimension: language_group {
