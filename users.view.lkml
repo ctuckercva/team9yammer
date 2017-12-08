@@ -47,6 +47,7 @@ view: users {
     sql: DATETIME_DIFF(DATETIME(${TABLE}.activated_at), DATETIME(${TABLE}.created_at), DAY);;
   }
 
+
   dimension: language {
     type: string
     sql: ${TABLE}.language ;;
@@ -60,6 +61,10 @@ view: users {
   measure: count {
     type: count
     drill_fields: [user_id, emails.count, events.count]
+  }
+  measure: countactivated {
+    type: count
+    drill_fields: [activated_date]
   }
 
   dimension: language_group {
